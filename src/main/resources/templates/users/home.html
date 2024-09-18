@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e3a8a; /* Dark Blue */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            color: #ffffff;
+        }
+
+        header .logo {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #fbbf24; /* Yellow Accent */
+        }
+
+        header nav a {
+            background-color: #2563eb; /* Lighter Blue */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #10b981; /* Teal Accent */
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 100px 30px 20px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .content-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-card h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #1e3a8a; /* Dark Blue */
+        }
+
+        .content-card p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e3a8a; /* Dark Blue */
+            color: #ffffff;
+            padding: 15px;
+            font-size: 1em;
+            position: relative;
+            margin-top: auto;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer .footer-content p {
+            margin: 0;
+        }
+
+        footer .footer-content a {
+            color: #fbbf24; /* Yellow Accent */
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        footer .footer-content a:hover {
+            color: #10b981; /* Teal Accent */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .content-card {
+                padding: 20px;
+            }
+
+            footer .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer .footer-content a {
+                margin-top: 10px;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        User Registration
+    </div>
+    <nav>
+        <a href="/users" th:href="@{/users}">Home</a>
+        <a href="/users/list" th:href="@{/users/list}">Users</a>
+    </nav>
+</header>
+
+<div class="main-content">
+    <div class="content-card">
+        <h2>Welcome to the User Registration System</h2>
+        <p>Easily manage user registrations and information. Explore the app to add, view, and manage users effectively.</p>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 User Registration System. All Rights Reserved.</p>
+        <p>
+            <a href="/privacy" th:href="@{/privacy}">Privacy Policy</a> |
+            <a href="/terms" th:href="@{/terms}">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
